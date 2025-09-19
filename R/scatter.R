@@ -1,11 +1,28 @@
 # we went inside the scatterhist function, went to code, then pressed 'insert roxygen skeleton'
 
+
+# NOTE: Consider adding importFrom("graphics", "barplot", "hist", "layout", "mtext", "par")
+
+# WARNING: * checking DESCRIPTION meta-information ... WARNING
+# Non-standard license specification:
+#   What license is it under?
+#   Standardizable: FALSE
+
+# WARNING: checking for missing documentation entries ... WARNING
+# Undocumented code objects:
+#   ‘mysum’
+# All user-level objects in a package should have documentation entries.
+
+
 #' A scatter plot with marginal histograms
 #'
 #' @param x a quantitative vector
 #' @param y a quantitative vector
 #' @param xlab x label
 #' @param ylab y label
+#'
+#'@importFrom graphics barplot hist layout mtext par
+#'
 #'
 #' @returns A scatter plot of x vs y with marginal histograms
 #' @export
