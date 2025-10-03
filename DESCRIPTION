@@ -11,3 +11,7 @@ LazyData: false
 RoxygenNote: 7.3.3
 URL: https://github.com/julianmoreno-ou/MATH4753F25julianMoreno
 BugReports: https://github.com/julianmoreno-ou/MATH4753F25julianMoreno/issues
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
