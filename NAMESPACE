@@ -2,6 +2,7 @@
 
 export(birthday)
 export(myfirstfunction)
+export(myncurve)
 export(scatterhist)
 importFrom(graphics,barplot)
 importFrom(graphics,hist)

@@ -7,8 +7,14 @@
 birthday(x)
 }
 \arguments{
-\item{x}{}
+\item{x}{Number of people in a random sample}
+}
+\value{
+Probabilit(y/ies) of 2 or more people in sample(s) sharing same birthday
 }
 \description{
 Title
+}
+\examples{
+birthday(20:24)
 }

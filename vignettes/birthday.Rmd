@@ -19,4 +19,53 @@ library(MATH4753F25julianMoreno)
 ```
 
 
+# Birthday Class Exercise
+## Derivation
+Starting off, we know that the sum of the probability of something and of *not* that probability, the result must be 1
+$$
+1 = P(A) + P(\bar{A})
+$$
+Where $P(A)$ is the probability that at least 2 people do have the same birthday, and $P(\bar{A})$ is the probability that at least 2 people do not.
 
+$P(A)$ thus can be written in terms of $P(\bar{A})$
+$$
+P(\bar{A}) = 1- P(A)
+$$
+
+Because $P(\bar{A})$ is the probability that each person has a *unique* birthday, we can use the Permutations counting rule to see how many events there are in which everyone has a unique birthday, and dividing by the total number of possibilities $365^x$ (where x is the number of people in the room) to yield the probability there are some people with the same birthday.
+$$
+P(\bar{A}) = \frac{P_x^{365}}{365^x}
+$$
+Take natural logarithm of entire function
+$$
+\ln{P(\bar{A})} = \ln{P_x^{365}} - x\ln{365}
+$$
+Which comes out to, using R functions
+$$
+\ln{P(\bar{A})} = \ln{x!} + x\ln{choose(365,x)} - x\ln{365}
+$$
+Breaking the factorial also into R functions, we get
+$$
+\ln{P(\bar{A})} = lfactorial(x) + lchoose(365,x) - x\ln{365}
+$$
+
+There, solving for P(A)
+$$
+P(A) = 1- e^{\ln{P(\bar{A})}}
+$$
+Substituting, we get our function
+$$
+P(A) = 1- e^{lfactorial(x) + lchoose(365,x) - x\ln{365}}
+$$
+
+## Function Source
+Given x as the sample size
+```{r}
+library(MATH4753F25julianMoreno)
+body(birthday)
+```
+
+## Demonstration of Function
+```{r}
+birthday(20:25)
+```
