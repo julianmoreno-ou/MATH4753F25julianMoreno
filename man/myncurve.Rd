@@ -20,5 +20,7 @@ An image of the distribution, with the region of the probability shaded along wi
 Title
 }
 \examples{
-myncurve(500,200,a=300)
+myncurve(500,200,300)
+myncurve(10,5,6)
+myncurve(2.343,1.213,3.543)
 }
