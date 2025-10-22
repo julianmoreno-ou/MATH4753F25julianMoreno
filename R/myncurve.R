@@ -8,10 +8,11 @@
 #' @export
 #'
 #' @examples
-#' myncurve(500,200,a=300)
+#' myncurve(500,200,300)
+#' myncurve(10,5,6)
+#' myncurve(2.343,1.213,3.543)
 myncurve = function(mu, sigma,a){
   curve(dnorm(x,mean=mu,sd=sigma), xlim = c(mu-3*sigma, mu + 3*sigma))
-  list(mu = mu, sigma = sigma)
 
   a_strt = mu - 10*sigma
   xcurve = seq(a_strt, a, length = 5000)
@@ -19,4 +20,11 @@ myncurve = function(mu, sigma,a){
   polygon(c(a_strt,xcurve,a),c(0,ycurve,0),col='Red')
   area = round( pnorm(a, mean = mu, sd = sigma) - pnorm(a_strt, mean = mu, sd = sigma), 4)
   text(a, 0.75*max(ycurve), paste("Area = ",area))
+  list(mu = mu, sigma = sigma, area = area)
 }
+
+#test_myncurve("area tests", {
+#  expect_equal(myncurve(500,200,300)$area, round(pnorm(300,500,200),4))
+#  expect_equal(myncurve(500,200,300)$area, round(pnorm(300,500,200),4))
+#  expect_equal(myncurve(500,200,300)$area, round(pnorm(300,500,200),4))
+#})
