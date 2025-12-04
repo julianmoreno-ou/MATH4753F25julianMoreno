@@ -1,0 +1,80 @@
+---
+title: "Package Vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{package-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  dpi=100
+)
+```
+
+```{r setup}
+library(MATH4753F25julianMoreno)
+```
+
+# Introduction
+This package contains functions and R related files which were built with the instructor in class. 
+
+
+# birthday
+## Description
+This code gives the probability that two people have the same birthday, given a number of people
+## Source
+```{r}
+body(birthday)
+```
+
+## Demonstration
+```{r}
+birthday(20:25)
+```
+
+
+# ntickets
+## Description
+This function helps decide the optimal number of tickets a travel agency should sell to maximize seats sold and minimize overbooking, given the number of seats available, probability of overbooking occuring, and probability any given person shows up
+## Source
+```{r}
+body(ntickets)
+```
+## Demonstration
+```{r fig.height = 4,fig.width = 8}
+par(mar = c(2,2,3,2)) # Unrelated to the code, this is just to make sure the figure shows in this document
+ntickets(400,0.02,0.95)
+```
+
+# myncurve
+## Description
+Given a mean, variance for a normal distribution, and a lower tail probability, a graphical representation of the lower tail probability on the normal distribution is made.
+
+## Source
+```{r}
+body(myncurve)
+```
+
+## Demonstration
+```{r}
+myncurve(0.2,0.5,0.3)
+```
+
+
+# myfirstfunction
+## Description
+Discrete given values are taken into a function, squaring the value, and plotted onto a graph.
+
+## Source
+```{r}
+body(myfirstfunction)
+```
+
+## Demonstration
+```{r}
+myfirstfunction(1:10)
+```
